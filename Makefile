@@ -9,7 +9,7 @@ INCS = $(addprefix inc/, $(INC))
 LIB = libmx
 LIBA := $(LIB)/libmx.a
 
-SRC = main.c \
+SRC = main.c
 
 SRCS = $(addprefix src/, $(SRC))
 
