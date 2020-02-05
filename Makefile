@@ -40,3 +40,4 @@ test:
 	@clang $(CFLAGS) $(OBJ) $(LIBA) -o $(NAME)
 	@mkdir -p obj
 	@mv $(OBJ) obj
+
