@@ -140,6 +140,6 @@ uninstall: clean
 
 clean:
 	@rm -rf $(OBJ)
-    @rm -rf obj
+	@rm -rf obj
 
 reinstall: uninstall install
