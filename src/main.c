@@ -6,12 +6,17 @@ static void mx_printerr(const char *s) {
 }
 
 static void mx_check_flags(const char *s) {
-    for (int f = 0; s[f] != '\0' && f < 15; f++) {
-        if (mx_strstr(FLAGS, &s[f]) == NULL) {
-            mx_printerr(LS);
+    int f = 0;
+    char c;
+
+    s = s + 1;
+    for (;s[f] != '\0'; f++) {
+        c = s[f];
+        if (mx_strchr(FLAGS, (int)c) == NULL) {
             mx_printerr(USAGE1);
-            mx_printerr(&s[f]);
+            mx_printerr(&c);
             mx_printerr(USAGE2);
+            exit (-1);
         }
     }
     exit (-1);
@@ -22,10 +27,13 @@ static void mx_pars_arg(const char *s) {
     char *flag = mx_strnew(15);
 
     flag[0] = '-';
-    if (s[0] == '-')
+    if (s[0] == '-') {
+        mx_strjoin(flag, s);
         mx_check_flags(s);
-    //     mx_strjoin(flag, s);
-    // if (s[0] != '-')
+    }
+    // if (s[0] != '-') {
+
+    // }
     //     gf
 }
 
